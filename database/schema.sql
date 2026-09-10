@@ -1,0 +1,16 @@
+-- create table for city portal posts
+CREATE TABLE IF NOT EXISTS posts (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    slug VARCHAR(255) UNIQUE NOT NULL,
+    content TEXT NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    neighborhood VARCHAR(150),
+    event_date TIMESTAMP WITH TIME ZONE,
+    link_url TEXT,
+    contact_info TEXT,
+    is_active BOOLEAN DEFAULT TRUE NOT NULL,
+    published_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL   
+);
